@@ -1,0 +1,92 @@
+/* ── Reset & base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* ── App shell ────────────────────────────────────────────────────────────── */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #1e293b 100%);
+  padding: 20px 32px;
+  border-bottom: 1px solid #334155;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: clamp(20px, 4vw, 30px);
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: -0.5px;
+}
+
+.app-header p {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+
+/* ── Body layout ──────────────────────────────────────────────────────────── */
+.app-body {
+  display: flex;
+  flex: 1;
+  gap: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  min-width: 220px;
+  background-color: #1e293b;
+  border-right: 1px solid #334155;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+}
+
+/* Grid area */
+.grid-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background-color: #0f172a;
+}
+
+/* Panels */
+.controls-panel,
+.metrics-panel {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 680px) {
+  .app-body {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    border-right: none;
+    border-bottom: 1px solid #334155;
+  }
+  .grid-area {
+    padding: 16px;
+  }
+}
